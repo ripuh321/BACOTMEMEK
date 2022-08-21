@@ -38,7 +38,7 @@ grouplist = 1
 async def init():
     await app.start()
 
-    @app.on_message(filters.command(["help"]))
+    @app.on_message(fillters.command("help"))
     async def start_command(_, message: Message):
         if await mongo.is_banned_user(message.from_user.id):
             return
